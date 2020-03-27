@@ -1,0 +1,48 @@
+{
+  "scripts": {
+    "build": "rimraf dist && rollup -c rollup.config.js",
+    "build:watch": "rimraf dist && rollup --watch -c rollup.config.js",
+    "format": "run-p format:eslint format:prettier",
+    "format:eslint": "eslint --ext .js,.html . --fix --ignore-path .gitignore",
+    "format:prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore",
+    "lint": "run-p lint:eslint lint:prettier",
+    "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
+    "lint:prettier": "prettier \"**/*.js\" --check --ignore-path .gitignore",
+    "serve": "serve -s ./dist",
+    "start": "run-p build:watch serve",
+    "test": "karma start --coverage",
+    "test:watch": "karma start --auto-watch=true --single-run=false"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@open-wc/building-rollup": "^0.21.0",
+    "@open-wc/eslint-config": "^2.0.0",
+    "@open-wc/prettier-config": "^0.1.10",
+    "eslint": "^6.1.0",
+    "husky": "^1.0.0",
+    "lint-staged": "^8.0.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.15.4",
+    "serve": "^11.3.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@open-wc/eslint-config",
+      "eslint-config-prettier"
+    ]
+  },
+  "prettier": "@open-wc/prettier-config",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
