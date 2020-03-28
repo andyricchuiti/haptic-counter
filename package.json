@@ -1,4 +1,8 @@
 {
+  "name": "haptic-counter",
+  "description": "Webcomponent haptic-counter following open-wc recommendations",
+  "author": "andyricchuiti",
+  "license": "MIT",
   "scripts": {
     "build": "rimraf dist && rollup -c rollup.config.js",
     "build:watch": "rimraf dist && rollup --watch -c rollup.config.js",
@@ -13,11 +17,16 @@
     "test": "karma start --coverage",
     "test:watch": "karma start --auto-watch=true --single-run=false"
   },
+  "dependencies": {
+    "lit-element": "^2.3.1",
+    "lit-html": "^1.2.1"
+  },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.8.3",
     "@open-wc/building-rollup": "^0.21.0",
     "@open-wc/eslint-config": "^2.0.0",
     "@open-wc/prettier-config": "^0.1.10",
+    "@surma/rollup-plugin-off-main-thread": "^1.4.1",
     "eslint": "^6.1.0",
     "husky": "^1.0.0",
     "lint-staged": "^8.0.0",
