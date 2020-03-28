@@ -13,6 +13,7 @@ class Counter {
 
   // eslint-disable-next-line class-methods-use-this
   sendSecond() {
+    console.log('sending message');
     postMessage('seconds-buzz');
   }
 }

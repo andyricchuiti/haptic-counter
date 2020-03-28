@@ -1,0 +1,22 @@
+{
+  "name": "Haptic Counter",
+  "short_name": "hapticCounter",
+  "start_url": ".",
+  "display": "fullscreen",
+  "background_color": "#000",
+  "description": "A Haptic Counter",
+  "orientation": "portrait",
+  "theme_color": "#000",
+  "icons": [
+    {
+      "src": "./assets/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

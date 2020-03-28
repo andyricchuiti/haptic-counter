@@ -23,11 +23,13 @@ class HapticCounter extends LitElement {
 
   render() {
     return html`
+      <pwa-install-button></pwa-install-button>
       <div role="main">
         <button type="button" @click="${this.toggleHaptic}">
           ${this.isCounting ? 'Stop' : 'Start'}
         </button>
       </div>
+      <pwa-update-available></pwa-update-available>
     `;
   }
 
