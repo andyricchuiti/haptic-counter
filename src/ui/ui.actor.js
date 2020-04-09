@@ -2,6 +2,7 @@ import 'pwa-helper-components/pwa-install-button.js';
 import 'pwa-helper-components/pwa-update-available.js';
 import './haptic-counter/haptic-counter.component.js';
 import { Actor, lookup } from '../core/actor.js';
+import { debug } from './decorators/debug.decorator.js';
 
 export default class UiActor extends Actor {
   constructor() {
@@ -14,6 +15,7 @@ export default class UiActor extends Actor {
     this.app.addEventListener('stop-counter', this.stopCounter.bind(this));
   }
 
+  @debug()
   async startCounter() {
     if ('wakeLock' in navigator) {
       this.wakeLock = await navigator.wakeLock.request('screen');
@@ -22,6 +24,7 @@ export default class UiActor extends Actor {
     this.counter.postMessage('start-counter');
   }
 
+  @debug()
   stopCounter() {
     if (this.wakeLock) {
       this.wakeLock.release();
@@ -30,6 +33,7 @@ export default class UiActor extends Actor {
     this.counter.postMessage('stop-counter');
   }
 
+  @debug()
   // eslint-disable-next-line class-methods-use-this
   onMessage(ev) {
     if ('vibrate' in navigator) {

@@ -32,7 +32,6 @@ export default class CounterActor extends Actor {
 
   // eslint-disable-next-line class-methods-use-this
   onMessage(ev) {
-    console.log('counter actor heard event', ev);
     switch (ev.data.toLowerCase()) {
       case 'start-counter':
         this.start();
