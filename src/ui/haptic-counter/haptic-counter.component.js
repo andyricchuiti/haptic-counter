@@ -1,6 +1,6 @@
 import { html, LitElement } from 'lit-element';
-import { customElement } from './decorators/custom-element.decorator.js';
-import { debug } from './decorators/debug.decorator.js';
+import { customElement } from '../decorators/custom-element.decorator.js';
+import { debug } from '../decorators/debug.decorator.js';
 import { style } from './haptic-counter.style.js';
 
 @customElement('haptic-counter')
@@ -37,6 +37,6 @@ class HapticCounter extends LitElement {
   toggleHaptic() {
     this.isCounting = !this.isCounting;
     const ev = this.isCounting ? new CustomEvent('start-counter') : new CustomEvent('stop-counter');
-    document.dispatchEvent(ev);
+    this.dispatchEvent(ev);
   }
 }

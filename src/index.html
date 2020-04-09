@@ -20,14 +20,6 @@
   <title>Haptic Counter</title>
 </head>
 <body>
-<haptic-counter></haptic-counter>
 <script type="module" src="./bootstrap.js"></script>
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js');
-    });
-  }
-</script>
 </body>
 </html>

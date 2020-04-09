@@ -20,13 +20,14 @@
   "dependencies": {
     "lit-element": "^2.3.1",
     "lit-html": "^1.2.1",
-    "pwa-helper-components": "^0.2.1"
+    "pwa-helper-components": "^0.2.10"
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.8.3",
     "@open-wc/building-rollup": "^0.21.0",
     "@open-wc/eslint-config": "^2.0.0",
     "@open-wc/prettier-config": "^0.1.10",
+    "@open-wc/rollup-plugin-html": "^0.3.6",
     "@surma/rollup-plugin-off-main-thread": "^1.4.1",
     "eslint": "^6.1.0",
     "husky": "^1.0.0",
@@ -34,6 +35,7 @@
     "npm-run-all": "^4.1.5",
     "rimraf": "^2.6.3",
     "rollup": "^1.15.4",
+    "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-cpy": "^2.0.1",
     "serve": "^11.3.0"
   },
